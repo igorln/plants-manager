@@ -25,13 +25,13 @@ export function MyPlants() {
   const [nextWater, setNextWater] = useState<string>();
 
   function handleRemove(plant:PlantProps) {
-    Alert.alert('Remover', `Deseja remover a ${plant.name}?`,[
+    Alert.alert('Remove', `Do you want to remove the ${plant.name}?`,[
       {
-        text: "Não 🙏🏻",
+        text: "No 🙏🏻",
         style: "cancel",
       },
       {
-        text: "Sim 😥",
+        text: "Yes 😥",
         onPress: async () => {
           try {
             await removePlant(plant.id);
@@ -40,7 +40,7 @@ export function MyPlants() {
               oldData.filter((item) => item.id !== plant.id)
             );
           } catch (error) {
-            Alert.alert("Não foi possível remover! 😥");
+            Alert.alert("Unable to remove! 😥");
           }
         },
       },
@@ -59,7 +59,7 @@ export function MyPlants() {
       );
 
       setNextWater(
-        `Não esqueça de regar a ${plantsStoraged[0].name} à ${nextTime} horas.`
+        `Don't forget to water the ${plantsStoraged[0].name} at ${nextTime} hours.`
       )
 
       setMyPlants(plantsStoraged);
@@ -88,7 +88,7 @@ export function MyPlants() {
 
       <View style={styles.plants}>
         <Text style={styles.plantsTitle}>
-          Próximas regadas
+          Next watering
         </Text>
 
         <FlatList 

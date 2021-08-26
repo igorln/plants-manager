@@ -47,14 +47,14 @@ export function UserIdentification(){
     try {
       await AsyncStorage.setItem('@plantmanager:user', name);
       navigation.navigate('Confirmation', {
-        title: 'Prontinho',
-        subtitle: 'Agora vamos começar a cuidar das suas plantinhas com muito cuidado',
-        buttonTitle: 'Começar',
+        title: 'Done',
+        subtitle: "Now let's start taking care of your plants very carefully",
+        buttonTitle: 'Start',
         icon: 'smile',
         nextScreen: 'PlantSelect',
       });
     } catch (e) {
-      Alert.alert('Não foi posível salvar o seu nome. 😢');
+      Alert.alert('Unable to save your name. 😢');
     }
   }
   
@@ -70,8 +70,7 @@ export function UserIdentification(){
                   { isFilled ? '😄' : '😀' }
                 </Text>
                 <Text style={styles.title}>
-                  Como podemos {'\n'}
-                  chamar você?
+                  How can I call you?
                 </Text>
               </View>
               <TextInput 
@@ -79,7 +78,7 @@ export function UserIdentification(){
                   styles.input,
                   (isFocused || isFilled) && { borderColor: colors.green},
                 ]} 
-                placeholder="Digite um nome"
+                placeholder="Type your name"
                 onBlur={handleInputBlur}
                 onFocus={handleInputFocus}
                 onChangeText={handleInputChange}
@@ -87,7 +86,7 @@ export function UserIdentification(){
 
               <View style={styles.footer}>
                 <Button 
-                  title="Confirmar"
+                  title="Submit"
                   onPress={handleSubmit}
                 />
               </View>

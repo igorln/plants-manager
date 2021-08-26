@@ -49,7 +49,7 @@ export const PlantCardSecondary = ({ data, handleRemove, ...rest }: PlantProps) 
         </Text>
         <View style={styles.details}>
           <Text style={styles.timeLabel}>
-            Regar às
+            Water at
           </Text>
           <Text style={styles.time}>
             {data.hour}

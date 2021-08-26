@@ -31,14 +31,6 @@ export default function App(){
       });
   
       return () => subscription.remove();
-  
-    // async function notifications() {
-    //   await Notifications.cancelAllScheduledNotificationsAsync();
-  
-    //   console.log(Notifications.getAllScheduledNotificationsAsync());
-    // }
-  
-    // notifications();
   })
 
   if(!fontsLoaded)

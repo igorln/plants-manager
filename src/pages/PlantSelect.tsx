@@ -85,7 +85,7 @@ export function PlantSelect(){
       setEnvironments([
         {
           key: 'all',
-          title:'Todos'
+          title:'All'
         },
         ...data
       ])

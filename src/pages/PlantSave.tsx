@@ -43,7 +43,7 @@ export function PlantSave(){
 
     if(dateTime && isBefore(dateTime, new Date())){
       setSelectedDateTime(new Date());
-      return Alert.alert('Escolha uma hora no futuro! ⏰');
+      return Alert.alert('Choose a time in the future! ⏰');
     }
 
     if(dateTime)
@@ -62,14 +62,14 @@ export function PlantSave(){
       });
 
       navigation.navigate('Confirmation', {
-        title: 'Tudo certo',
-        subtitle: 'Fique tranquilo que sempre vamos lembrar você de cuidar da sua plantinha com muito cuidado.',
-        buttonTitle: 'Muito Obrigado :D',
+        title: 'All right',
+        subtitle: 'Rest assured that we will always remind you to take care of your plant very carefully.',
+        buttonTitle: 'Thank you :D',
         icon: 'hug',
         nextScreen: 'MyPlants',
       });      
     } catch {
-      Alert.alert('Não foi possível salvar. 😢')
+      Alert.alert('Unable to save. 😢')
     }
   }
 
@@ -104,7 +104,7 @@ export function PlantSave(){
           </Text>
         </View>
         <Text style={styles.alertLabel}>
-          Escolha o melhor horário para ser lembrado:
+          Choose the best time to be remembered:
         </Text>
 
         {
@@ -124,14 +124,14 @@ export function PlantSave(){
               onPress={handleOpenDateTimePikerForAndroid}
             >
               <Text style={styles.dateTimePickerText}>
-                {`Mudar ${format(selectedDateTime, 'HH:mm')}`}
+                {`Change ${format(selectedDateTime, 'HH:mm')}`}
               </Text>
             </TouchableOpacity>
           )
         }
 
         <Button
-          title="Cadastrar planta"
+          title="Save plant"
           onPress={handleSave}
         />
       </View>
@@ -193,7 +193,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.text,
     color: colors.blue,
     fontSize: 17,
-    textAlign: 'justify',
   },
   alertLabel: {
     textAlign: 'center',

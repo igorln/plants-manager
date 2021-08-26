@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-import userImg from '../assets/rosto.png';
+import userImg from '../assets/walle.jpg';
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
